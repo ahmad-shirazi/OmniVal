@@ -1,0 +1,33 @@
+{
+  "benchmarks": [
+    {"name": "DocVQA", "modality": "document", "metrics": ["ANLS", "mAP@[0.5:0.95]"]},
+    {"name": "VisualMRC", "modality": "document", "metrics": ["ANLS", "mAP"]},
+    {"name": "FUNSD", "modality": "document", "metrics": ["ANLS", "mAP"]},
+    {"name": "CORD", "modality": "document", "metrics": ["ANLS", "mAP"]},
+    {"name": "SROIE", "modality": "document", "metrics": ["ANLS", "mAP"]},
+    {"name": "OCRBenchV2-En", "modality": "document", "metrics": ["official_score"]},
+    {"name": "MMLongBench-Doc", "modality": "document", "metrics": ["official_score"]},
+    {"name": "CharXiv", "modality": "chart", "metrics": ["reasoning_score"]},
+    {"name": "ScreenSpot-Pro", "modality": "gui", "metrics": ["click_accuracy"]},
+    {"name": "OSWorld", "modality": "gui", "metrics": ["task_success"]},
+    {"name": "Video-MME", "modality": "video", "metrics": ["official_score"]},
+    {"name": "WorldSense", "modality": "audio_visual", "metrics": ["official_score"]},
+    {"name": "DailyOmni", "modality": "audio_visual", "metrics": ["official_score"]},
+    {"name": "VoiceBench", "modality": "voice", "metrics": ["official_score"]},
+    {"name": "HF Open ASR", "modality": "asr", "metrics": ["WER"]},
+    {"name": "DIHARD III", "modality": "diarization", "metrics": ["DER"]}
+  ],
+  "baselines": [
+    "Gemini 3.1 Pro",
+    "Gemini 2.5 Pro",
+    "GPT-4o",
+    "NExT-OMNI",
+    "Qwen3-Omni",
+    "Nemotron 3 Nano Omni (base)",
+    "OmniVAL (Nemotron 3 Nano Omni)",
+    "DocLayLLM",
+    "LayoutLLM",
+    "LayTextLLM",
+    "DLaVA"
+  ]
+}

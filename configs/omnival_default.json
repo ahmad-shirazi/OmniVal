@@ -1,0 +1,55 @@
+{
+  "phase_a": {
+    "teacher": "Gemini 3.1 Pro",
+    "temperature": 0.7,
+    "raw_trace_target": 120000,
+    "validated_trace_target": 110000,
+    "retention_rate": 0.917,
+    "scaffolding_tools": ["DB-ResNet", "SAM 2.1", "Whisper v3", "SigLIP", "pyannote", "TableFormer"]
+  },
+  "ma_val": {
+    "mode_phase_a": "filter",
+    "mode_stage_b2": "verifier",
+    "q_min": 0.85,
+    "weights": {
+      "answer": 0.35,
+      "grounding": 0.35,
+      "modality": 0.15,
+      "reasoning": 0.15
+    }
+  },
+  "stage_b1": {
+    "student": "Nemotron 3 Nano Omni",
+    "learning_rate": 0.00015,
+    "effective_batch_size": 128,
+    "sequence_length": 4096,
+    "epochs": 3,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "warmup_steps": 500
+  },
+  "stage_b2": {
+    "learning_rate": 0.00001,
+    "effective_batch_size": 64,
+    "sequence_length": 4096,
+    "epochs_per_iteration": 2,
+    "max_iterations": 20,
+    "convergence_window": 3,
+    "convergence_delta_min": 0.2,
+    "convergence_delta_max": 0.4,
+    "average_iterations": 13.4
+  },
+  "data_splits": {
+    "train_fraction": 0.8,
+    "refinement_fraction": 0.1,
+    "test_fraction": 0.1,
+    "train_target": 88000,
+    "refinement_target": 11000,
+    "test_target": 11000
+  },
+  "deployment": {
+    "inference": "single forward pass",
+    "scaffolding_at_inference": false,
+    "active_params": "3B of 30B MoE"
+  }
+}
