@@ -241,12 +241,6 @@ This repository contains the implementation scaffold and local validation harnes
 - Private or non-distributable paper artifacts.
 
 Those pieces can be added through the adapter interfaces without changing the MA-VAL core or orchestration logic.
-
-## Citation
-
-```bibtex
-@misc{omnival2026,
-  title = {OmniVAL: Validated Chain-of-Thought Distillation for True Native Omni Models},
   year = {2026},
   note = {Reference implementation}
 }
